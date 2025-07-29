@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seguros de Coche</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+    .container {
+      display: flex;
+    }
+    nav {
+      width: 250px;
+      background: #0066cc;
+      color: white;
+      height: 100vh;
+      padding: 20px;
+    }
+    nav h2 {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav li {
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    nav li:hover {
+      text-decoration: underline;
+    }
+    .content {
+      padding: 30px;
+      flex-grow: 1;
+    }
+    .hidden {
+      display: none;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .info-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #0066cc;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+    }
+    .close {
+      float: right;
+      cursor: pointer;
+      color: #888;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: #0066cc;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <h2>Explorar</h2>
+      <ul>
+        <li onclick="showView('tipos')">Tipos de seguro</li>
+        <li onclick="showView('tabla')">Tabla comparativa</li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <!-- Vista 1: Tipos -->
+      <div id="tipos" class="view">
+        <div class="card" id="terceros">
+          <h3>1. Seguro a Terceros</h3>
+          <button class="info-btn" onclick="openModal('modal1')">+ Info</button>
+          <p>Cobertura básica obligatoria. Desde 150 €/año.</p>
+        </div>
+        <div class="card" id="ampliado">
+          <h3>2. Seguro a Terceros Ampliado</h3>
+          <button class="info-btn" onclick="openModal('modal2')">+ Info</button>
+          <p>Incluye robo, incendio y lunas. Desde 200 €/año.</p>
+        </div>
+        <div class="card" id="riesgo_franquicia">
+          <h3>3. Todo Riesgo con Franquicia</h3>
+          <button class="info-btn" onclick="openModal('modal3')">+ Info</button>
+          <p>Cubre daños propios, tú asumes parte (franquicia). Desde 400 €/año.</p>
+        </div>
+        <div class="card" id="riesgo_completo">
+          <h3>4. Todo Riesgo sin Franquicia</h3>
+          <button class="info-btn" onclick="openModal('modal4')">+ Info</button>
+          <p>Cobertura total, sin asumir gastos. Desde 700 €/año.</p>
+        </div>
+        <div class="card" id="otros">
+          <h3>5. Otras Modalidades</h3>
+          <button class="info-btn" onclick="openModal('modal5')">+ Info</button>
+          <p>Seguro por días, por uso, o específicos.</p>
+        </div>
+        <div class="card" id="recomendado">
+          <h3>⭐ Recomendación</h3>
+          <p><strong>Seguro a Terceros Ampliado</strong> — Para un coche de 13 años y conductor de 27, es la mejor relación cobertura-precio.</p>
+        </div>
+      </div>
+
+      <!-- Vista 2: Tabla -->
+      <div id="tabla" class="view hidden">
+        <h2>Tabla comparativa de seguros</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Coberturas clave</th>
+              <th>¿Cubre daños propios?</th>
+              <th>Precio orientativo</th>
+              <th>Recomendado para</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Terceros</td>
+              <td>Daños a terceros, defensa jurídica</td>
+              <td>No</td>
+              <td>150 € – 400 €</td>
+              <td>Coches muy antiguos, mínimo legal</td>
+            </tr>
+            <tr>
+              <td>Terceros Ampliado</td>
+              <td>+ Robo, incendio, lunas</td>
+              <td>No</td>
+              <td>200 € – 500 €</td>
+              <td>Coches de 6-15 años</td>
+            </tr>
+            <tr>
+              <td>Todo Riesgo (franquicia)</td>
+              <td>+ Daños propios (con franquicia)</td>
+              <td>Parcial</td>
+              <td>400 € – 900 €</td>
+              <td>Coches de 1-7 años</td>
+            </tr>
+            <tr>
+              <td>Todo Riesgo (sin franquicia)</td>
+              <td>Daños propios, sin franquicia</td>
+              <td>Sí</td>
+              <td>700 € – 1.500 €</td>
+              <td>Coches nuevos o premium</td>
+            </tr>
+            <tr>
+              <td>Otros</td>
+              <td>Temporales, por uso, combinados</td>
+              <td>Depende</td>
+              <td>Variable</td>
+              <td>Usos puntuales o personalizados</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modales -->
+  <div id="modal1" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal1')">&times;</span><h3>Terceros</h3><p>Daños a terceros, defensa jurídica. No cubre tu coche.</p></div></div>
+  <div id="modal2" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal2')">&times;</span><h3>Terceros Ampliado</h3><p>Incluye robo, incendio y lunas. Buena cobertura sin ser caro.</p></div></div>
+  <div id="modal3" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal3')">&times;</span><h3>Todo Riesgo con Franquicia</h3><p>Cubre daños propios con una franquicia (tú pagas una parte).</p></div></div>
+  <div id="modal4" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal4')">&times;</span><h3>Todo Riesgo sin Franquicia</h3><p>El seguro paga el 100 % de los daños, pero es mucho más caro.</p></div></div>
+  <div id="modal5" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal5')">&times;</span><h3>Otras Modalidades</h3><p>Seguros temporales o adaptados a bajo uso. Flexibles, pero limitados.</p></div></div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+    function showView(id) {
+      document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguros a terceros – Comparativa para Gonzalo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f9fb;
+      color: #333;
+    }
+    header {
+      background-color: #013d74;
+      color: #fff;
+      padding: 1.5rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    .intro {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .intro h2 {
+      margin-top: 0;
+      color: #013d74;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .controls label {
+      margin-right: 0.5rem;
+      font-weight: bold;
+    }
+    .controls select {
+      padding: 0.3rem 0.5rem;
+      font-size: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.65rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    th {
+      background-color: #013d74;
+      color: #fff;
+      cursor: pointer;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f3f6f9;
+    }
+    .footnotes {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 1.5rem;
+    }
+    .footnotes ol {
+      padding-left: 1.2rem;
+    }
+    .footnotes li {
+      margin-bottom: 0.5rem;
+    }
+    @media (max-width: 620px) {
+      th, td {
+        display: block;
+        width: 100%;
+      }
+      th {
+        background-color: #013d74;
+        padding-top: 1rem;
+      }
+      tbody tr {
+        margin-bottom: 1rem;
+        display: block;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+      }
+      tbody tr:nth-child(even) {
+        background-color: transparent;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Comparativa de seguros a terceros – Gonzalo</h1>
+  </header>
+  <div class="container">
+    <section class="intro">
+      <h2>Tu situación</h2>
+      <p>
+        <strong>Vehículo:</strong> Audi A3 (2012) con 100 000 km.<br>
+        <strong>Conductor:</strong> hombre de 27 años, primer seguro.<br>
+        <strong>Modalidad deseada:</strong> seguros a terceros (básicos y ampliados).
+      </p>
+      <p>
+        Los seguros a terceros son la modalidad más económica, pues incluyen la responsabilidad civil obligatoria y, según la póliza, pueden ampliarse con coberturas de lunas, robo e incendio. La siguiente tabla reúne los seguros más baratos de julio de 2025 según Rastreator y Kelisto, destacando sus coberturas principales y el precio aproximado para un perfil medio【212068059414654†L124-L133】【116844808167804†L1460-L1678】. Ten en cuenta que los importes pueden variar para conductores jóvenes y vehículos de más de diez años, pero esta comparación sirve de referencia.
+      </p>
+    </section>
+    <div class="controls">
+      <label for="filterTipo">Filtrar por tipo:</label>
+      <select id="filterTipo">
+        <option value="todos">Todos</option>
+        <option value="terceros">Terceros básico</option>
+        <option value="ampliado">Terceros ampliado</option>
+      </select>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Aseguradora</th>
+          <th id="priceHeader">Precio estimado<br>(click para ordenar)</th>
+          <th>Tipo</th>
+          <th>Coberturas principales</th>
+          <th>Observaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Línea Directa básico -->
+        <tr data-tipo="terceros" data-precio="236">
+          <td><strong>Línea Directa</strong></td>
+          <td>≈236 € / año</td>
+          <td>Terceros</td>
+          <td>Lunas, asistencia en carretera desde el km 0 y defensa jurídica</td>
+          <td>Compañía con coberturas personalizables y descuentos por cambio de aseguradora. La tarifa media para un perfil de 42 años es de 236 € al año【157380913839950†L1222-L1231】; para conductores jóvenes el precio puede ser superior.</td>
+        </tr>
+        <!-- Línea Directa ampliado -->
+        <tr data-tipo="ampliado" data-precio="273">
+          <td><strong>Línea Directa</strong></td>
+          <td>≈273 € / año</td>
+          <td>Terceros ampliado</td>
+          <td>Lunas, robo, incendio y asistencia en carretera</td>
+          <td>Además de las coberturas básicas, incluye cobertura de robo e incendio. Línea Directa permite añadir vehículo de sustitución y otras coberturas opcionales【157380913839950†L1173-L1201】.</td>
+        </tr>
+        <!-- Direct Seguros básico -->
+        <tr data-tipo="terceros" data-precio="153">
+          <td><strong>Direct Seguros</strong></td>
+          <td>≈153 € / año</td>
+          <td>Terceros</td>
+          <td>Asistencia en carretera, daños al conductor, lunas</td>
+          <td>El seguro a terceros más barato según Rastreator (152,94 €/año)【212068059414654†L124-L133】. Incluye asistencia en carretera pero no cubre pinchazos; seguro del conductor hasta 15 000 €【212068059414654†L135-L160】.</td>
+        </tr>
+        <!-- Direct Seguros ampliado -->
+        <tr data-tipo="ampliado" data-precio="162">
+          <td><strong>Direct Seguros</strong></td>
+          <td>≈162 € / año</td>
+          <td>Terceros ampliado</td>
+          <td>Asistencia en carretera, daños al conductor, lunas, robo e incendio</td>
+          <td>La opción a terceros ampliado más económica (162,07 €/año)【212068059414654†L262-L267】. Ofrece cobertura de robo e incendio por un coste ligeramente superior al seguro básico【212068059414654†L269-L294】.</td>
+        </tr>
+        <!-- Axa básico -->
+        <tr data-tipo="terceros" data-precio="158">
+          <td><strong>AXA</strong></td>
+          <td>≈158 € / año</td>
+          <td>Terceros</td>
+          <td>Asistencia en carretera, daños al conductor, lunas</td>
+          <td>Alternativa económica con precio aproximado de 157,47 €/año【212068059414654†L124-L133】; cobertura y servicios básicos similares a Direct Seguros【212068059414654†L164-L187】.</td>
+        </tr>
+        <!-- Axa ampliado -->
+        <tr data-tipo="ampliado" data-precio="167">
+          <td><strong>AXA</strong></td>
+          <td>≈167 € / año</td>
+          <td>Terceros ampliado</td>
+          <td>Asistencia en carretera, daños al conductor, lunas, robo e incendio</td>
+          <td>Cobertura de robo e incendio por apenas 4 € más que el básico【212068059414654†L296-L321】. Buena relación calidad-precio.</td>
+        </tr>
+        <!-- Prima básico -->
+        <tr data-tipo="terceros" data-precio="182">
+          <td><strong>Prima</strong></td>
+          <td>≈182 € / año</td>
+          <td>Terceros</td>
+          <td>Asistencia en carretera, daños al conductor, lunas</td>
+          <td>Póliza barata con libre elección de taller y mejor asistencia en carretera que las opciones más económicas【212068059414654†L236-L259】.</td>
+        </tr>
+        <!-- Prima ampliado -->
+        <tr data-tipo="ampliado" data-precio="217">
+          <td><strong>Prima</strong></td>
+          <td>≈217 € / año</td>
+          <td>Terceros ampliado</td>
+          <td>Asistencia en carretera, daños al conductor, lunas, robo e incendio</td>
+          <td>Ofrece las mejores coberturas de asistencia y conductor entre los seguros ampliados, a costa de un precio algo más alto【212068059414654†L324-L349】.</td>
+        </tr>
+        <!-- Pelayo ampliado -->
+        <tr data-tipo="ampliado" data-precio="225">
+          <td><strong>Pelayo</strong></td>
+          <td>≈225 € / año</td>
+          <td>Terceros ampliado</td>
+          <td>Asistencia en carretera, defensa de multas, vehículo de sustitución</td>
+          <td>Integra extras como coche de sustitución y compromiso de reparación rápida; precio desde 225 €【212068059414654†L262-L267】【542489708164964†L324-L334】.</td>
+        </tr>
+        <!-- Allianz básico -->
+        <tr data-tipo="terceros" data-precio="198">
+          <td><strong>Allianz</strong></td>
+          <td>≈198 € / año</td>
+          <td>Terceros</td>
+          <td>Asistencia en viaje completa, lunas, robo e incendio</td>
+          <td>Póliza a terceros bien valorada por su cobertura amplia; precio aproximado 198 € al año【116844808167804†L1604-L1616】.</td>
+        </tr>
+        <!-- Qualitas Auto básico -->
+        <tr data-tipo="terceros" data-precio="224">
+          <td><strong>Qualitas Auto</strong></td>
+          <td>≈224 € / año</td>
+          <td>Terceros</td>
+          <td>Asistencia en viaje, daños propios, lunas, robo e incendio</td>
+          <td>La opción de terceros de Qualitas Auto incluye más coberturas que el seguro básico y permite gestionar todo online【116844808167804†L1624-L1643】.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <strong>Consejo:</strong> los seguros a terceros son ideales para coches de más de diez años, ya que te protegen frente a daños a terceros y puedes ampliar coberturas sin pagar una prima demasiado alta. Compara las condiciones específicas para tu edad y perfil: un conductor novel puede ver incrementado el precio respecto a estas estimaciones.
+    </p>
+    <div class="footnotes">
+      <h3>Fuentes</h3>
+      <ol>
+        <li>Rastreator – Top 5 de seguros de coche baratos de julio 2025【212068059414654†L124-L133】, con precios y coberturas de Direct Seguros, Axa y Prima【212068059414654†L135-L160】【212068059414654†L164-L187】.</li>
+        <li>Rastreator – Ranking de seguros a terceros ampliado más baratos【212068059414654†L262-L267】 y descripción de Direct, Axa y Prima ampliados【212068059414654†L269-L294】【212068059414654†L296-L321】【212068059414654†L324-L349】.</li>
+        <li>Kelisto – Comparativa de precios por modalidad en julio 2025【116844808167804†L1460-L1678】, que incluye las modalidades de Direct Seguros, Axa, Allianz, Qualitas Auto y MMT.</li>
+        <li>Kelisto – Ficha informativa de Línea Directa, con precios para terceros (236 €) y terceros ampliado (273 €) y detalles de coberturas personalizables【157380913839950†L1173-L1201】【157380913839950†L1222-L1231】.</li>
+        <li>Rankia – Análisis de Línea Directa y otras aseguradoras, destacando la personalización, asistencia desde km 0 y descuentos【542489708164964†L268-L284】.</li>
+      </ol>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const filter = document.getElementById('filterTipo');
+      const priceHeader = document.getElementById('priceHeader');
+      const tbody = document.querySelector('tbody');
+      let sortAsc = true;
+
+      function filterRows() {
+        const selected = filter.value;
+        const rows = tbody.querySelectorAll('tr');
+        rows.forEach(row => {
+          const type = row.getAttribute('data-tipo');
+          if (selected === 'todos' || selected === type) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      }
+
+      filter.addEventListener('change', filterRows);
+
+      priceHeader.addEventListener('click', function() {
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        rows.sort((a, b) => {
+          const priceA = parseFloat(a.getAttribute('data-precio'));
+          const priceB = parseFloat(b.getAttribute('data-precio'));
+          return sortAsc ? priceA - priceB : priceB - priceA;
+        });
+        // Append rows in new order
+        rows.forEach(row => tbody.appendChild(row));
+        sortAsc = !sortAsc;
+      });
+    });
+  </script>
+</body>
+</html>
